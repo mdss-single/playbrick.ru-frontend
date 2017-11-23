@@ -1,0 +1,130 @@
+//= template/header.html
+	<main class="main">
+		<div class="full">
+			<div class="breadcrumbs">
+				<a href="#" class="breadcrumbs__item">Главная</a>
+				<a href="#" class="breadcrumbs__item">Каталог</a>
+				<a href="#" class="breadcrumbs__item">Creator</a>
+			</div>
+			<p class="page-title">Корзина</p>
+			<table class="table cart__table">
+				<tr>
+					<th>Фото</th>
+					<th>Название</th>
+					<th>Цена</th>
+					<th>Количество</th>
+					<th>Стоимость</th>
+					<th><a href="#" class="cart__clear">Удалить все</a></th>
+				</tr>
+				<tr>
+					<td><img src="i/product-small.jpg" alt="" class="cart__product-pic"></td>
+					<td><a href="#" class="cart__product-name">Звёздный истребитель Йоды</a></td>
+					<td>1999 руб.</td>
+					<td>
+						<div class="cart__product-counter">
+							<button class="cart__product-count cart__product-count--minus"></button>
+							<button class="cart__product-count cart__product-count--plus"></button>
+							<input type="text" name="" id="" class="input-text" value="1">
+						</div>
+					</td>
+					<td>3998 руб.</td>
+					<td><a href="#" class="cart__product-remove"></a></td>
+				</tr>
+				<tr>
+					<td><img src="i/product-small.jpg" alt="" class="cart__product-pic"></td>
+					<td><a href="#" class="cart__product-name">Звёздный истребитель Йоды</a></td>
+					<td>1999 руб.</td>
+					<td>
+						<div class="cart__product-counter">
+							<button class="cart__product-count cart__product-count--minus"></button>
+							<button class="cart__product-count cart__product-count--plus"></button>
+							<input type="text" name="" id="" class="input-text" value="1">
+						</div>
+					</td>
+					<td>3998 руб.</td>
+					<td><a href="#" class="cart__product-remove"></a></td>
+				</tr>
+				<tr>
+					<td><img src="i/product-small.jpg" alt="" class="cart__product-pic"></td>
+					<td><a href="#" class="cart__product-name">Звёздный истребитель Йоды</a></td>
+					<td>1999 руб.</td>
+					<td>
+						<div class="cart__product-counter">
+							<button class="cart__product-count cart__product-count--minus"></button>
+							<button class="cart__product-count cart__product-count--plus"></button>
+							<input type="text" name="" id="" class="input-text" value="1">
+						</div>
+					</td>
+					<td>3998 руб.</td>
+					<td><a href="#" class="cart__product-remove"></a></td>
+				</tr>
+			</table>
+			<div class="cart__total">
+				<div class="cart__coupon">
+					<input type="text" name="" id="" class="input-text" placeholder="Код купона">
+					<button class="btn">применить</button>
+					<span class="cart__coupon-action">Купон успешно применен!</span>
+				</div>
+				<div class="cart__summ">
+					Итого:
+					<span class="cart__summ-value">7398 руб.</span>
+				</div>
+			</div>
+			<div class="cart__checkout">
+				<div class="cart__delivery">
+					<div class="cart__delivery-title">Выберите способ доставки</div>
+					<div class="cart__delivery__items">
+						<div class="cart__delivery-item">
+							<label for="cart1">
+								<div class="cart-delivery__item-check"><input type="radio" name="cart" id="cart1" class="radio"></div>
+								<p class="cart-delivery__item-name">Курьерская доставка по Москве (бесплатно)</p>
+								<div class="cart-delivery__item-text">
+									<p>Курьерская доставка осуществляется на следующий день после оформления заказа, если товар есть в наличии. Курьерская доставка осуществляется в пределах Томска и Северска ежедневно с 10.00 до 21.00. Заказ на сумму свыше 300 рублей доставляется бесплатно.</p>
+									<p>Стоимость бесплатной доставки раcсчитывается от суммы заказа с учтенной скидкой. В случае если сумма заказа после применения скидки менее 300р, осуществляется платная доставка.</p>
+								</div>
+							</label>
+						</div>
+						<div class="cart__delivery-item">
+							<label for="cart2">
+								<div class="cart-delivery__item-check"><input type="radio" name="cart" id="cart2" class="radio"></div>
+								<p class="cart-delivery__item-name">Самовывоз (бесплатно) </p>
+								<div class="cart-delivery__item-text">
+									<p>Удобный, бесплатный и быстрый способ получения заказа.</p>
+									<p>Адрес офиса: Адрес офиса: Москва, ул. Арбат, 1/3, офис 419</p>
+								</div>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="cart__personal">
+					<div class="cart__personal-title">Даные для доставки</div>
+					<form action="" class="cart__form">
+						<div class="form__row">
+							<input type="text" name="name" class="input-text" placeholder="Имя и фамилия">
+						</div>
+						<div class="form__row">
+							<input type="email" name="email" class="input-text" placeholder="E-mail" required>
+						</div>
+						<div class="form__row">
+							<input type="tel" name="phone" class="input-text js-phone-mask" placeholder="Номер телефона без восьмерки" data-mask="+7 (000) 000-00-00" required>
+						</div>
+						<div class="form__row">
+							<input type="text" name="address" class="input-text" placeholder="Город" required>
+						</div>
+						<div class="form__row">
+							<textarea name="comment" cols="30" rows="10" class="textarea" placeholder="Комментарий к заказу"></textarea>
+						</div>
+						<div class="form__row">
+							<img src="i/capcha.jpg" alt="">
+							<input type="text" name="captcha_code" class="input-text cart__personal-capcha" placeholder="Код с картинки" required>
+						</div>
+						<div class="form__row">
+							<button type="submit" class="btn cart__personal-btn">Оформить заказ</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+//= template/viewed.html
+	</main>
+//= template/footer.html

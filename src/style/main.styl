@@ -1,0 +1,1412 @@
+$big = "screen and (max-width:1200px)";
+$tablet = "screen and (max-width:992px)";
+$phone = "screen and (max-width:768px)";
+$phone-small = "screen and (max-width:480px)";
+
+/*  <general>  */
+body
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	flex-direction column
+	color #000
+	font normal 1.5rem/1.3 'Open Sans', sans-serif;
+	background-color #fff
+:-moz-placeholder
+	opacity 1
+	color currentColor
+:-ms-input-placeholder
+	opacity: 1
+	color currentColor
+a
+	color inherit
+	font inherit
+	text-decoration none
+	transition all .2s
+	&:hover
+		text-decoration underline
+.main
+	flex 1
+	position relative
+	&:before
+		position absolute
+		top 0
+		right 0
+		left 0
+		height 9px
+		background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAJAgMAAACOKK53AAAACVBMVEUPGhwPGhwPGhx/ZskwAAAAA3RSTlMCBw3IAvrKAAAAD0lEQVQI12NoAEIHMIQCABhSAcHoKhv8AAAAAElFTkSuQmCC') repeat-x 0 0
+		content ''
+/*  </general>  */
+
+/*  <menu>  */
+.menu
+	position fixed
+	top 0
+	bottom 0
+	left 0
+	z-index 999
+	overflow-y auto
+	width 310px
+	background-color #fff
+	border-right 2px solid #ffd401
+	transform translateX(-103%)
+	transition all .4s
+	&--active
+		transform translateX(0)
+	&__cover
+		position fixed
+		top 0
+		right 0
+		bottom 0
+		left 0
+		z-index 998
+		background-color rgba(#000, .6)
+	&__main
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		flex-direction column
+		min-height 100%
+	&__logo
+		flex-shrink 0
+		display block
+		text-align center
+		margin 15px 0
+	&__auth
+		flex-shrink 0
+		color #fff
+		background-color #292929
+		padding 15px
+		&-item
+			display block
+			padding 5px 0
+	&__nav
+		flex 1
+		padding 15px
+		&-item
+			display block
+			padding 5px 0
+	&__footer
+		background-color #ffd401
+		padding 15px
+		p
+			margin 0
+/*  </menu>  */
+
+/*  <header>  */
+.header
+	position relative
+	flex-shrink 0
+	.full
+		height 175px
+		@media $tablet
+			height 225px
+		@media $phone
+			height 350px
+			padding-top 50px
+		&:after
+			position absolute
+			right 15px
+			bottom 16px
+			width 163px
+			height 22px
+			background-image url('../i/header-payment.png')
+			content ''
+			@media $tablet
+				display none
+	&:before
+		position absolute
+		top 0
+		right 0
+		left 0
+		z-index -1
+		height 37px
+		background-color #292929
+		content ''
+	&__menu
+		position absolute
+		top 8px
+		left 15px
+		width 26px
+		height 20px
+		border solid #fff
+		border-width 2px 0
+		@media screen and (min-width:769px)
+			display none
+		&:before
+			position absolute
+			top 50%
+			right 0
+			left 0
+			height 2px
+			background-color #fff
+			content ''
+			transform translateY(-50%)
+		&:after
+			position absolute
+			top 50%
+			left 100%
+			color #fff
+			font-size 2.2rem
+			font-family Rubik
+			text-transform uppercase
+			padding-left 10px
+			content 'Меню'
+			transform translateY(-50%)
+	&__address
+		position absolute
+		top 0
+		left 15px
+		color #fff
+		font-style normal
+		font-size 1.4rem
+		line-height 37px
+		@media $phone
+			display none
+	&__auth
+		position absolute
+		top 0
+		right 15px
+		color #fff
+		line-height 37px
+		&-login
+			background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAZlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+Vn2moAAAAInRSTlMAEO7kzFkdwbezUAT93HBmYV1UIhf16dOuaVYoJLqpcjAuq+03zAAAAIBJREFUCNdNzkkOgzAQRNFv2gYbSJgDgYz3v2QcDxJvV2pVq/CafZNFtpGo1JUpm3mv9BSi3Ik6eQC6J+s1mArv6PizhlcdSpcrXu1Q0VfePqsbRbK0CmhRDakQ73Y89236/4kbXA+6IxtWX55kyDHsY9LPcWau7XoQGSdt4QzeD2MoBRdNNYMfAAAAAElFTkSuQmCC') no-repeat 0 calc(50% + 1px)
+			padding-left 20px
+		&-register
+			margin-left 10px
+	&__logo
+		position absolute
+		top 60px
+		left 15px
+		@media $phone
+			display block
+			position static
+			text-align center
+	&__search
+		position absolute
+		top 62px
+		left 305px
+		width 360px
+		@media $big
+			width 240px
+		@media $tablet
+			top 128px
+			left 15px
+			right 15px
+			width auto
+		@media $phone
+			position relative
+			top auto
+			right auto
+			left auto
+			margin-top 15px
+		&-input
+			width 100%
+			height 43px
+			font-size 1.4rem
+			border 1px solid #eeb70f
+			border-radius 2px
+			padding 0 64px 0 10px
+			transition all .2s
+			&:focus
+				box-shadow 0 0 2px #eeb70f
+		&-btn
+			position absolute
+			top 1px
+			right 1px
+			bottom 1px
+			width 54px
+			background #ffd401 url('../i/icons/icon-zoom.png') no-repeat center center
+			border 0
+			border-radius 0 2px 2px 0
+			transition all .2s
+			&:hover
+			&:focus
+				background-color darken(#ffd401, 2)
+	&__phone
+		position absolute
+		top 60px
+		right 210px
+		text-align right
+		@media $phone
+			position static
+			text-align center
+			margin-top 20px
+		&-number
+			display block
+			font 500 2rem/1 Rubik
+		&-notice
+			color #555
+			font-size 1.3rem
+	&__cart
+		position absolute
+		top 62px
+		right 15px
+		width 165px
+		height 43px
+		line-height @height
+		text-decoration none
+		background #ffd401 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWBAMAAAA2mnEIAAAAD1BMVEUAAAD///////////////+PQt5oAAAABHRSTlMA5kpJG2qUMwAAADFJREFUGNNjcHFxcWCAAEw2HKCxXcAAPxsEWChmQwFuNm7ALGgAJxldBLCSTIIKEBIAxdsYM3+Ha0EAAAAASUVORK5CYII=') no-repeat 25px center
+		border-radius 2px
+		padding-left 60px
+		a:hover&
+			text-decoration none
+			background-color darken(#ffd401, 2)
+		@media $phone
+			display block
+			position static
+			width 100%
+			margin-top 10px
+	&__nav
+		position absolute
+		bottom 0
+		left 305px
+		@media $phone
+			display none
+		&-item
+			line-height 45px
+			text-decoration underline
+			text-decoration-color #ccc
+			margin-right 26px
+			a:hover&
+				text-decoration-color #000
+	&__catalog-link
+		position absolute
+		bottom 0
+		left 15px
+		width 262px
+		height 45px
+		font-weight 500
+		font-family Rubik
+		line-height @height
+		text-transform uppercase
+		background #ffd401 url('../i/header-burger.png') no-repeat calc(100% - 16px) center
+		padding-left 15px
+		@media $phone
+			right 15px
+			width auto
+		a:hover&
+		&--active
+			text-decoration none
+			background-color darken(#ffd401, 2)
+	&__catalog
+		display none
+		position absolute
+		top 175px
+		right 15px
+		left 15px
+		z-index 19
+		background-color #ffd401
+		box-shadow 7px 7px 0 rgba(#000, .2)
+		@media $tablet
+			top 225px
+		@media $phone
+			top 350px
+		&--active
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			animation fade .5s
+		&-main
+			flex 1
+			columns 3
+			column-gap 15px
+			padding 15px 0
+			margin-right 15px
+			@media $tablet
+				columns 2
+			@media $phone
+				overflow-y auto
+				max-height 350px
+			@media $phone-small
+				column-count auto
+		&-item
+			display block
+			padding 5px 15px
+			a:hover&
+				text-decoration none
+				background-color #ffea80
+		&-filter
+			width 292px
+			padding 25px 30px
+			background-color #ffea80
+			@media $phone
+				display none
+	&-filter
+		&__title
+			font-size 2rem
+			margin 0 0 15px
+		&__subtitle
+			margin 0 0 10px
+		&__gender
+			position absolute
+			left -9999px
+			& + label
+				display block
+				opacity .8
+				font-size 1.4rem
+				line-height 32px
+				background-repeat no-repeat
+				padding-left 30px
+				cursor pointer
+			&--boys
+				background-image url('../i/filter-gender-male.png')
+				margin-bottom 10px
+			&--girls
+				background-image url('../i/filter-gender-female.png')
+				margin-bottom 30px
+			&:checked + label
+				opacity 1
+				text-decoration underline
+		&__age
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			&-item
+				position absolute
+				left -9999px
+				& + label
+					opacity .8
+					font-size 2rem
+					font-family Rubik
+					cursor pointer
+				&:checked + label
+					opacity 1
+					text-decoration underline
+		&__btn
+			margin-top 15px
+/*  </header>  */
+
+/*  <viewed>  */
+.viewed
+	background-color #f0f0f0
+	padding 25px 0 40px
+	margin-top 35px
+	&__title
+		font 500 2.2rem Rubik
+		margin 0 0 20px
+	&__list
+		.catalog__item
+			width calc(25% - 2px)
+			margin-right 2px
+			transition none
+			&:hover
+				box-shadow none
+			@media $tablet
+				width calc(33.33% - 2px)
+			@media $phone
+				width 50%
+			@media $phone-small
+				width 100%
+		.flickity-prev-next-button
+			width 58px
+			height @width
+			background-color #ffd401
+			border 4px solid #fff
+			transition all .2s
+			@media $phone
+				width 40px
+				height @width
+			&:hover
+				background-color darken(#ffd401, 2)
+			&:focus
+				box-shadow none
+			&.previous
+				left -(@width / 2)
+				@media $big
+					left -20px
+				@media $phone
+					left -10px
+			&.next
+				right -(@width / 2)
+				@media $big
+					right -20px
+				@media $phone
+					right -10px
+/*  </viewed>  */
+
+/*  <footer>  */
+.footer
+	flex-shrink 0
+	background-color #ffd401
+	.full
+		height 170px
+		@media $phone
+			height 140px
+	&__nav
+		position absolute
+		top 20px
+		left 15px
+		@media $phone
+			display none
+		&-item
+			margin-right 20px
+			@media $tablet
+				margin-right 10px
+	&__social
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		justify-content flex-start
+		position absolute
+		top 62px
+		left 15px
+		@media $phone
+			display block
+			top 18px
+			right 15px
+			left auto
+		&-item
+			width 32px
+			height @width
+			background-repeat no-repeat
+			background-position center center
+			border 1px solid #000
+			border-radius 50%
+			margin-right 10px
+			@media $phone
+				display block
+				margin-right 0
+				margin-bottom 5px
+			&--fb
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAQCAMAAADzlqVxAAAAM1BMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACjBUbJAAAAEXRSTlMAmXVjcWYfjogoEjIZWUk8Be3excgAAABHSURBVAjXncpLDsAgCEVRngIK2s/+V1vRJs69Azgh0OxV9YmnAClgwK+MatpDDKFVQo7lIgVV5KaO1UXOPG7Mbf+dyZqO+QF96gFWMLGghAAAAABJRU5ErkJggg==')
+			&--vk
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAMAAAAV+IX9AAAARVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADc6ur3AAAAF3RSTlOZAGSTjHhZSZCIRTo1MRIKbmtcW00iGlb6LPcAAABNSURBVAjXNcpbDoAgFAPR6QVEAcH3/pcqJNqvnmQwSyq4pGZ2YlDlmRTBuOlvYWoeV9EGq2M3yEIP32Z16fp5DMmA0GvikHLwUWWZwwtlZQGxkhCIDwAAAABJRU5ErkJggg==')
+			&--youtube
+				background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAMAAABcOc2zAAAARVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADc6ur3AAAAF3RSTlOZAIgylY99dyRtZl1ZPzsRcS4sGQwJAms/t0UAAABcSURBVAjXVcxbCsAgDETRGRurra++97/UohHE8xO4DAFZ/KJO/5IoDoOEDwGTDFOP3dHtkHoM/arBARrI3LbrCFxkCvcGXdgWnihoDv0iFl1EwsSDydk+F7Nd/AHRRQHqlzCfDgAAAABJRU5ErkJggg==')
+			a:hover&
+				background-color rgba(#000, .05)
+	&__phone
+		position absolute
+		top 18px
+		right 15px
+		text-align right
+		@media $phone
+			right auto
+			left 15px
+		&-item
+			font 500 2rem Rubik
+	&__email
+		text-decoration underline
+		text-decoration-style dotted
+		a:hover&
+			text-decoration none
+	&__copyright
+		position absolute
+		right 15px
+		bottom 0
+		left 15px
+		color #555
+		font-size 1.4rem
+		line-height 52px
+		border-top 1px solid rgba(#000, .1)
+		@media $phone
+			display none
+/*  </footer>  */
+
+/*  <home>  */
+.about-us
+	background-color #c5faff
+	padding 28px 0 32px
+	&__wrap
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		justify-content space-between
+		align-items center
+		@media $tablet
+			display block
+	&__main
+		width 50%
+		@media $tablet
+			width auto
+		&-title
+			font 500 3.6rem Rubik
+			margin 0 0 30px
+			@media $phone
+				display none
+		&-list
+			padding 0
+			margin 0
+			@media $tablet
+				display none
+			li
+				position relative
+				list-style-type none
+				font-size 2rem
+				font-family Rubik
+				padding-left 45px
+				margin 24px 0
+				&:first-child
+					margin-top 0
+				&:last-child
+					margin-bottom 0
+				&:before
+					position absolute
+					top 5px
+					left 0
+					width 16px
+					height @width
+					background-color #fff
+					border-radius 50%
+					box-shadow 2px 2px 0 rgba(#051c1e, .3)
+					content ''
+	&__slider
+		width 558px
+		@media $tablet
+			width 100%
+		&-item
+			position relative
+			width 100%
+			@media $tablet
+				img
+					width 100%
+		&-link
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+		.flickity-prev-next-button
+			width 58px
+			height @width
+			background-color #ffd401
+			border 4px solid #fff
+			transition all .2s
+			@media $phone
+				width 40px
+				height @width
+			&:hover
+				background-color darken(#ffd401, 2)
+			&:focus
+				box-shadow none
+			&.previous
+				left -(@width / 2)
+				@media $big
+					left -20px
+				@media $phone
+					left -10px
+			&.next
+				right -(@width / 2)
+				@media $big
+					right -20px
+				@media $phone
+					right -10px
+.home-products
+	&__cats
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		justify-content flex-start
+		overflow hidden
+		padding-bottom 2px
+		margin-top 40px
+		@media screen and (min-width:480px) and (max-width:768px)
+			justify-content space-between
+			white-space nowrap
+		@media $phone-small
+			display block
+		&-item
+			position relative
+			font 500 2.4rem Rubik
+			line-height 77px
+			padding 0 30px
+			cursor pointer
+			transition all .2s
+			@media screen and (min-width:480px) and (max-width:768px)
+				width 33.33%
+				font-size 2.2rem
+				text-align center
+				padding 0
+			&:before
+				position absolute
+				right -10000%
+				bottom -2px
+				left -10000%
+				height 2px
+				content ''
+				transition all .2s
+			&--popular
+				color #ffd401
+				&^[2]--active
+					color #000
+					background-color #ffd401
+					&:before
+						background-color #ffd401
+			&--newest
+				color #0096ff
+				&^[2]--active
+					color #fff
+					background-color #0096ff
+					&:before
+						background-color #0096ff
+			&--sale
+				color #ed1d20
+				&^[2]--active
+					color #fff
+					background-color #ed1d20
+					&:before
+						background-color #ed1d20
+	&__content
+		display none
+		&--active
+			display block
+			animation fade .5s
+			padding-top 23px
+.home-category
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	flex-wrap wrap
+	justify-content center
+	&__item
+		width calc(16.6666667% - 30px)
+		text-align center
+		margin 45px 15px 0
+		@media $tablet
+			width calc(20% - 30px)
+			&:nth-child(-n+6)
+				width calc(33.33% - 30px)
+		@media $phone
+			width calc(50% - 20px)
+			margin 30px 10px 0
+			&:nth-child(-n+6)
+				width calc(50% - 20px)
+		&:nth-child(-n+5)
+			width calc(20% - 30px)
+				@media $tablet
+					width calc(33.33% - 30px)
+		&-pic
+			margin-bottom 15px
+		&-name
+			font-weight bold
+			font-size 1.8rem
+			margin 0
+		&-descr
+			color #999
+			font-size 1.4rem
+			margin 0
+/*  </home>  */
+
+/*  <catalog>  */
+.catalog
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	flex-wrap wrap
+	&__item
+		position relative
+		width 25%
+		background-color #fff
+		padding 0 15px 100px
+		transition all .2s
+		@media $tablet
+			width 33.33%
+		@media $phone
+			width 50%
+		@media $phone-small
+			width 100%
+		&:hover
+			z-index 4
+			box-shadow 0 0 20px rgba(#051c1e, .15)
+			& ^[1]-labels
+			& ^[1]-preview
+			& .btn
+				animation fade .5s
+				visibility visible
+				@media $tablet
+					animation none
+		&-pic
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content center
+			align-items center
+			height 200px
+		&-category
+			color #777
+			font-size 1.3rem
+			text-transform uppercase
+			margin 0 0 5px
+		&-name
+			line-height 2.2rem
+			margin 0
+		&-system
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			align-items center
+			position absolute
+			right 15px
+			bottom 25px
+			left 15px
+		&-cost
+			font bold 2.2rem Rubik
+			@media $big
+				font-size 2rem
+			&--old
+				display block
+				color #777
+				font-size 1.3rem
+				text-decoration line-through
+		.btn
+			visibility hidden
+			@media $tablet
+				visibility visible
+		&-labels
+			visibility hidden
+			position absolute
+			top 14px
+			left 15px
+			@media $tablet
+				visibility visible
+		&-label
+			display block
+			width 32px
+			height @width
+			color #fff
+			font-weight bold
+			font-family Rubik
+			line-height @height
+			text-align center
+			border-radius 50%
+			margin-bottom 5px
+			&--sale
+				font-size 2rem
+				background-color #ed1d20
+			&--new
+				font-size 1.3rem
+				background-color #0096ff
+		&-preview
+			visibility hidden
+			position absolute
+			top 14px
+			right 15px
+			width 37px
+			height @width
+			background-image url('../i/catalog-preview.png')
+			@media $tablet
+				visibility visible
+.breadcrumbs
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	justify-content flex-start
+	margin 20px 0
+	&__item
+		position relative
+		color #555
+		font-size 1.3rem
+		margin-right 28px
+		&:after
+			position absolute
+			top 50%
+			right -18px
+			width 6px
+			height @width
+			border solid rgba(#000, .3)
+			border-width 0 1px 1px 0
+			transform rotate(-45deg) translateY(-50%)
+			content ''
+		&:last-child
+			margin-right 0
+			&:after
+				display none
+.category
+	&__name
+		font 500 3.7rem/1 Rubik
+		margin 0
+	&__filter
+		position relative
+		border 2px solid #ffd401
+		padding 20px 14px 15px
+		margin 18px 0 30px
+		&-title
+			font 500 2.2rem Rubik
+			margin-bottom 15px
+		&-section
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			align-items flex-start
+			margin 10px 0
+		&-name
+			flex-shrink 0
+			width 100px
+			color #333
+			font-size 1.4rem
+			padding 2px 0
+		&-value
+			flex 1
+			font-size 1.4rem
+			margin-left 20px
+		&-item
+			display inline-block
+			border-radius 2px
+			padding 2px 4px
+			margin-right 5px
+			&:last-child
+				margin-right 0
+			&--active
+				background-color #ffd401
+		&-body
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content space-between
+			white-space nowrap
+		&-btn
+			position absolute
+			right 14px
+			bottom 25px
+			width 166px
+			font-weight normal
+			text-align center
+			padding 0
+	&__sort
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		justify-content space-between
+		font-size 1.4rem
+		margin 25px 0 35px
+		@media $phone
+			display block
+		&-finded
+			line-height 34px
+		&-main
+			position relative
+			width 220px
+		&-title
+			position absolute
+			top 0
+			right 230px
+			line-height 34px
+			white-space nowrap
+			@media $phone
+				display none
+.pagination
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	justify-content center
+	margin 50px 0
+	&__item
+		min-width 32px
+		color #ed1d20
+		font 500 1.7rem/30px Rubik
+		text-align center
+		border 1px solid rgba(#000, .2)
+		border-radius 16px
+		padding 0 10px
+		margin 0 5px
+		a:hover&
+		&--current
+			color #fff
+			text-decoration none
+			background-color #ed1d20
+		&--previous
+			position relative
+			padding-left 20px
+			@media $phone
+				text-indent -9999px
+			&:hover
+				&:before
+					border-color #fff
+			&:before
+				position absolute
+				top 12px
+				left 12px
+				width 6px
+				height @width
+				border solid #ed1d20
+				border-width 2px 0 0 2px
+				content ''
+				transform rotate(-45deg)
+				transition all .2s
+				@media $phone
+					text-indent 0
+		&--next
+			position relative
+			padding-right 20px
+			@media $phone
+				text-indent -9999px
+			&:hover
+				&:after
+					border-color #fff
+					@media $phone
+						text-indent 0
+			&:after
+				position absolute
+				top 12px
+				right 12px
+				width 6px
+				height @width
+				border solid #ed1d20
+				border-width 0 2px 2px 0
+				content ''
+				transform rotate(-45deg)
+				transition all .2s
+/*  </catalog>  */
+
+/*  <product>  */
+.product
+	&__name
+		font 500 3.7rem Rubik
+		margin 0 0 30px
+	&__wrap
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		justify-content space-between
+	&__photos
+		width calc(50% - 15px)
+		&-big
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content center
+			align-items center
+			background-color #fff
+			border 1px solid #ddd
+			padding 15px 0
+		&-other
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			flex-wrap wrap
+			justify-content flex-start
+			margin-top 15px
+			margin 15px -7.5px 0
+		&-item
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			justify-content center
+			align-items center
+			width calc(20% - 15px)
+			height 75px
+			border 1px solid #ddd
+			margin 15px 7.5px 0
+			transition all .2s
+			@media $tablet
+				width calc(33.33% - 15px)
+			&:hover
+				border-color #ffd401
+				box-shadow 0 0 0 2px #ffd401
+			img
+				max-height 75px
+	&__info
+		width calc(50% - 15px)
+	&__general
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		justify-content space-between
+		align-items center
+		@media $tablet
+			display block
+	&__cost
+		font 500 3.7rem/1 Rubik
+		@media $tablet
+			margin-bottom 20px
+		&-old
+			color #777
+			font-weight normal
+			font-size 1.7rem
+			text-decoration line-through
+	&__stock
+		color #39c643
+		font normal 1.5rem 'Open Sans'
+	&__buy
+		.btn--empty
+			margin-left 18px
+	&__delivery
+		line-height 2.6rem
+		border solid #eee
+		border-width 1px 0
+		padding 15px 0
+		margin 15px 0
+		p
+			margin 0
+	&__description
+		line-height 2.6rem
+		h2
+			color #000
+			font-weight normal
+			font-size 2rem
+			font-family Rubik
+			margin 10px 0
+		p
+			margin 0
+	&__extra
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		flex-wrap wrap
+		border-top 1px solid #eee
+		padding-top 15px
+		margin-top 15px
+		&-item
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			width 100%
+			margin-bottom 15px
+			&:last-child
+				margin-bottom 0
+			span
+				background-color #fff
+			& > span
+				padding-left 5px
+		&-name
+			width 50%
+			border-bottom 1px dotted #999
+			span
+				padding-right 5px
+	&__reviews
+		border-top 1px solid #eee
+		padding-top 25px
+		margin-top 25px
+		&-title
+			font 500 2.2rem Rubik
+			margin 0 0 20px
+		&-item
+			margin-bottom 45px
+	&-review
+		&__author
+			margin-right 18px
+		&__date
+			color #777
+		&__text
+			position relative
+			line-height 2.4rem
+			background-color #f0f0f0
+			border-radius 7px
+			padding 15px 20px
+			margin-top 15px
+			&:before
+				position absolute
+				top -10px
+				left 13px
+				border solid transparent
+				border-width 0 10px 10px 0
+				border-bottom-color #f0f0f0
+				content ''
+			p
+				margin 0
+		&__add
+			border 2px solid #ed1d20
+			border-radius 7px
+			padding 25px 38px 40px
+			&-title
+				font 500 2.2rem Rubik
+				margin 0 0 15px
+			&-system
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				align-items center
+			&-text
+				width 210px
+				margin-left 12px
+			&-btn
+				flex 1
+				text-align right
+/*  </product>  */
+
+/*  <cart>  */
+.cart
+	&__link
+		color #ed1d20
+	&__table
+		margin-top 35px
+		&--fade
+			animation fade .8s
+		tr
+			&:first-child
+				@media $phone
+					display none
+			@media $phone
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				flex-wrap wrap
+				justify-content space-between
+				align-items center
+				border-bottom 1px solid #eee
+		td
+			@media $big
+				padding 15px 10px
+			@media $phone
+				border-bottom 0
+			&:first-child
+				@media $big
+					padding-left 0
+				@media $phone
+					display none
+			&:nth-child(2)
+				width 55%
+				@media $big
+					width 40%
+				@media $tablet
+					width auto
+				@media $phone
+					width 100%
+			&:nth-child(3)
+				@media $big
+					white-space nowrap
+				@media $phone
+					display none
+		th
+			@media $big
+				padding 15px 10px
+			&:first-child
+				@media $big
+					padding-left 0
+				@media $phone
+					display none
+			&:last-child
+				@media $big
+					padding-right 0
+			&:nth-child(3)
+				@media $phone
+					display none
+		td
+			&:last-child
+				text-align right
+				@media $big
+					padding-right 0
+	&__clear
+		color #ed1d20
+		font-weight bold
+		text-decoration underline
+		text-decoration-style dotted
+		a:hover&
+			text-decoration none
+	&__product
+		&-pic
+			width 80px
+			border 1px solid #e0e0e0
+		&-name
+			color #ed1d20
+			text-decoration underline
+			a:hover&
+				text-decoration none
+		&-counter
+			position relative
+			width 92px
+			height 34px
+			.input-text
+				height 34px
+				text-align center
+				padding 0 26px
+		&-count
+			position absolute
+			top 1px
+			bottom 1px
+			width 25px
+			background-color #fff
+			border 0
+			&--minus
+			&--plus
+				&:before
+					position absolute
+					top 50%
+					right 5px
+					left 5px
+					height 2px
+					background-color #000
+					content ''
+					transform translateY(-50%)
+			&--plus
+				&:after
+					position absolute
+					top 50%
+					left 50%
+					width 2px
+					height 16px
+					background-color #000
+					content ''
+					transform translate(-50%, -50%)
+			&--minus
+				left 1px
+			&--plus
+				right 1px
+		&-remove
+			display inline-block
+			position relative
+			width 32px
+			height @width
+			border 1px solid #ed1d20
+			border-radius 50%
+			a:hover&
+				border-color #cc1214
+				&:before
+				&:after
+					background-color #cc1214
+			&:before
+			&:after
+				position absolute
+				top calc(50% - 1px)
+				left 7px
+				width 16px
+				height 2px
+				background-color #ed1d20
+				content ''
+				transition all .2s
+			&:before
+				transform rotate(45deg)
+			&:after
+				transform rotate(-45deg)
+	&__total
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		border-bottom 1px solid #eee
+		padding 30px 120px 25px 0
+		@media $tablet
+			padding 30px 0 25px
+		@media $phone
+			display block
+	&__coupon
+		.input-text
+			width 165px
+		.btn
+			height 34px
+		&-action
+			color #39a633
+			font-weight bold
+			margin-left 15px
+			@media $phone
+				display block
+				margin-left 0
+				margin-top 5px
+	&__summ
+		flex 1
+		text-align right
+		@media $phone
+			text-align left
+			margin-top 20px
+		&-value
+			color #ed1d20
+			font-size 2.3rem
+	&__checkout
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		justify-content space-between
+		margin 30px 0
+		@media $phone
+			display block
+	&__delivery
+		flex-grow 0
+		flex-shrink 1
+		width calc(50% - 15px)
+		background-color #f1f1f1
+		padding 12px 20px
+		@media $phone
+			width 100%
+			margin-bottom 20px
+		&-title
+			font 500 2.2rem Rubik
+			margin-bottom 20px
+		&-item
+			position relative
+			padding-left 30px
+			margin-bottom 30px
+			&:last-child
+				margin-bottom 0
+	&-delivery__item
+		&-check
+			position absolute
+			top 3px
+			left 0
+		&-name
+			font 400 2.2rem Rubik
+			margin 0 0 15px
+		&-text
+			font-size 1.4rem
+			line-height 2.2rem
+	&__personal
+		width calc(50% - 15px)
+		@media $phone
+			width 100%
+		&-title
+			font 500 2.2rem Rubik
+			margin-bottom 20px
+		&-capcha
+			width 160px
+			margin 0 15px
+			@media $phone
+				width 100%
+				margin 0
+		&-btn
+			width 100%
+			height 56px
+			font-size 1.5rem
+/*  </cart>  */
+
+/*  <forms>  */
+.auth
+	max-width 600px
+	margin 20px auto 0
+.fast-order
+	display none
+	max-width 400px
